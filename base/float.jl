@@ -537,6 +537,20 @@ isnan(x::Float16) = reinterpret(UInt16,x)&0x7fff > 0x7c00
 isnan(x::Real) = false
 
 """
+    isnan(x::type{T}) -> T
+
+Returns not a number (NaN) of a certain floating point type.
+"""
+
+nan(x::AbstractFloat) = nan(typeof(x))
+nan(::Type{BigFloat}) = big(NaN)
+nan(::Type{Float64}) = NaN64
+nan(::Type{Float32}) = NaN32
+nan(::Type{Float32}) = NaN16
+nan(::Type{Float16}) = NaN16
+
+
+"""
     isfinite(f) -> Bool
 
 Test whether a number is finite.
