@@ -22,6 +22,7 @@ Build system changes
 
 New library functions
 ---------------------
+* isnan(x::type{T}) -> T Returns not a number (NaN) of a certain floating point type.
 
 * The `splitpath` function now accepts any `AbstractString` whereas previously it only accepted paths of type `String` ([#33012]).
 * The `tempname` function now takes an optional `parent::AbstractString` argument to give it a directory in which to attempt to produce a temporary path name ([#33090]).
